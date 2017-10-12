@@ -1,2 +1,10 @@
-<h1>Messages#index</h1>
-<p>Find me in app/views/messages/index.html.erb</p>
+<h1>Message Board</h1>
+<div id="all-messages">
+  <%= render @messages %>
+</div>
+
+<%= form_with url: '#', id: 'new-message' do |f| %>
+  <%= f.label :content %><br>
+  <%= f.text_area :content, id: 'message-content' %> <br>
+  <%= f.submit 'Submit Message', id: 'submit-message-btn' %>
+<% end %>
